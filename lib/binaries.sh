@@ -66,3 +66,13 @@ install_npm() {
     fi
   fi
 }
+
+install_phantomjs() {
+  local download_url="https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.0.0-source.zip"
+	
+  echo "Dowloading phantiomjs function"
+		
+  curl "$download_url" --silent --fail -o /tmp/phantom.tar.gz || (echo "Unable to download Phantomjs; does it exist?" && false)
+  tar xzf /tmp/phantom.tar.gz -C /tmp
+}
+
